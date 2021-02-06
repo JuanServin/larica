@@ -1,6 +1,10 @@
 const express=require("express")
 const routes = express.Router()
-routes.post("/batata",(request,response)=>{
+routes.post("/address",(request,response)=>{
+    const {email,senha} = request.body
+    response.json({email,senha})
+})
+routes.get("/address",(request,response)=>{
     const {email,senha} = request.body
     response.json({email,senha})
 })
