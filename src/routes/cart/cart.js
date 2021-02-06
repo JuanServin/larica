@@ -1,11 +1,8 @@
 const express=require("express")
+const controllerCart = require("../../controllers/controllerCart")
 const routes = express.Router()
-routes.post("/cart",(request,response)=>{
-    const {email,senha} = request.body
-    response.json({email,senha})
-})
-routes.get("/cart",(request,response)=>{
-    const {email,senha} = request.body
-    response.json({email,senha})
-})
+routes.post("/Cart",controllerCart.create)
+routes.get("/Cart",controllerCart.index)
+routes.put("/Cart",controllerCart.update)
+routes.delete("/Cart",controllerCart.delete)
 module.exports = routes
